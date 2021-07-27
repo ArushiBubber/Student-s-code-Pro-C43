@@ -129,32 +129,5 @@ class Game {
         }
            
       
-        displayRanks(){
-          //display the medals
-          camera.position.y = 0;
-          camera.position.x = 0;
-  
-          imageMode(CENTER);
-  
-          Player.getPlayerInfo();
-  
-          image(bronze_img, displayWidth/-4, -100 + displayHeight/9, 200, 240);
-          image(silver_img, displayWidth/4, -100 + displayHeight/10, 225, 270);
-          image(gold_img, 0, -100, 250, 300);
-  
-          textAlign(CENTER);
-          textSize(50);
-          for(var plr in allPlayers){
-              if(allPlayers[plr].place === 1){
-                  text("1st: " + allPlayers[plr].name, 0, 85);
-              }else if(allPlayers[plr].place === 2){
-                  text("2nd: " + allPlayers[plr].name, displayWidth/4, displayHeight/9 + 73);
-              }else if(allPlayers[plr].place === 3){
-                  text("3rd: " + allPlayers[plr].name, displayWidth/-4, displayHeight/10 + 76);
-              }else{
-                  textSize(30);
-                  text("Honorable Mention: " + allPlayers[plr].name, 0, 225);
-              }
-          }
       }
   }
